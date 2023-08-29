@@ -2,20 +2,20 @@
 #include<cstring>
 #include<algorithm>
 using namespace std;
-int ff[26];//定义计数数组
+int letter[26];//瀹氫箟璁℃暟鏁扮粍
 int main()
 {
     int i,j,n,maxn=0;char a[81];
     for(i=0;i<4;i++)
     {
-        gets(a);//gets读入
+        gets(a);
         n=strlen(a);
-        for(j=0;j<n;j++)if(a[j]>='A'&&a[j]<='Z')ff[a[j]-'A']++;//统计字符出现次数
+        for(j=0;j<n;j++)if(a[j]>='A'&&a[j]<='Z')letter[a[j]-'A']++;//缁熻瀛楃鍑虹幇娆℃暟
     }
-    for(i=0;i<26;i++)maxn=max(maxn,ff[i]);//最多次数（最高柱状图）
+    for(i=0;i<26;i++)maxn=max(maxn,letter[i]);//缁熻鏈�澶氱殑娆℃暟
     for(i=maxn;i>0;i--){
     for(j=0;j<26;j++)
-    if(ff[j]>=i)printf("* ");else printf("  ");//模拟，是可以输出的就输出*，否则跳过
-    printf("\n");}//换行
-    for(i=0;i<26;i++)printf("%c ",i+'A');//输出a~z
+    if(letter[j]>=i)printf("* ");else printf("  ");//杈撳嚭*
+    printf("\n");}
+    for(i=0;i<26;i++)printf("%c ",i+'A');//杈撳嚭a~z
 }
